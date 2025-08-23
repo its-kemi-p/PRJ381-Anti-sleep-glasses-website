@@ -1,277 +1,172 @@
-/********** Template CSS **********/
+/********** Professional Dashboard Colors Only **********/
+
 :root {
-    --primary: #009CFF;
-    --light: #F3F6F9;
-    --dark: #191C24;
+    --primary: #0d1b2a;       /* Dark Navy */
+    --secondary: #1b263b;     /* Sidebar / dark gray-blue */
+    --accent: #007bff;        /* Highlight color */
+    --success: #28a745;       /* Connected / safe */
+    --danger: #dc3545;        /* Drowsy alert */
+    --light-bg: #f5f5f5;      /* Card / main background */
+    --dark-text: #e0e0e0;     /* Primary text */
+    --muted-text: #a0a0a0;    /* Secondary text */
 }
 
-.back-to-top {
-    position: fixed;
-    display: none;
-    right: 45px;
-    bottom: 45px;
-    z-index: 99;
+/*** Body ***/
+body {
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    font-family: 'Heebo', sans-serif;
 }
 
-
-/*** Spinner ***/
-#spinner {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity .5s ease-out, visibility 0s linear .5s;
-    z-index: 99999;
-}
-
-#spinner.show {
-    transition: opacity .5s ease-out, visibility 0s linear 0s;
-    visibility: visible;
-    opacity: 1;
-}
-
-
-/*** Button ***/
-.btn {
-    transition: .5s;
-}
-
-.btn.btn-primary {
-    color: #FFFFFF;
-}
-
-.btn-square {
-    width: 38px;
-    height: 38px;
-}
-
-.btn-sm-square {
-    width: 32px;
-    height: 32px;
-}
-
-.btn-lg-square {
-    width: 48px;
-    height: 48px;
-}
-
-.btn-square,
-.btn-sm-square,
-.btn-lg-square {
-    padding: 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: normal;
-    border-radius: 50px;
-}
-
-
-/*** Layout ***/
+/*** Sidebar ***/
 .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 250px;
-    height: 100vh;
-    overflow-y: auto;
-    background: var(--light);
-    transition: 0.5s;
-    z-index: 999;
+    background: var(--secondary);
+    color: var(--light-bg);
 }
 
-.content {
-    margin-left: 250px;
-    min-height: 100vh;
-    background: #FFFFFF;
-    transition: 0.5s;
-}
-
-@media (min-width: 992px) {
-    .sidebar {
-        margin-left: 0;
-    }
-
-    .sidebar.open {
-        margin-left: -250px;
-    }
-
-    .content {
-        width: calc(100% - 250px);
-    }
-
-    .content.open {
-        width: 100%;
-        margin-left: 0;
-    }
-}
-
-@media (max-width: 991.98px) {
-    .sidebar {
-        margin-left: -250px;
-    }
-
-    .sidebar.open {
-        margin-left: 0;
-    }
-
-    .content {
-        width: 100%;
-        margin-left: 0;
-    }
-}
-
-
-/*** Navbar ***/
 .sidebar .navbar .navbar-nav .nav-link {
-    padding: 7px 20px;
-    color: var(--dark);
-    font-weight: 500;
-    border-left: 3px solid var(--light);
-    border-radius: 0 30px 30px 0;
-    outline: none;
+    color: var(--light-bg);
 }
 
 .sidebar .navbar .navbar-nav .nav-link:hover,
 .sidebar .navbar .navbar-nav .nav-link.active {
-    color: var(--primary);
-    background: #FFFFFF;
-    border-color: var(--primary);
+    color: var(--accent);
+    background: var(--primary);
+    border-color: var(--accent);
 }
 
 .sidebar .navbar .navbar-nav .nav-link i {
-    width: 40px;
-    height: 40px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: #FFFFFF;
-    border-radius: 40px;
+    background: var(--secondary);
 }
 
 .sidebar .navbar .navbar-nav .nav-link:hover i,
 .sidebar .navbar .navbar-nav .nav-link.active i {
-    background: var(--light);
+    background: var(--primary);
 }
 
-.sidebar .navbar .dropdown-toggle::after {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    border: none;
-    content: "\f107";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    transition: .5s;
+/*** Navbar ***/
+.content .navbar {
+    background-color: var(--light-bg);
+    color: var(--dark-text);
 }
 
-.sidebar .navbar .dropdown-toggle[aria-expanded=true]::after {
-    transform: rotate(-180deg);
+.content .navbar .nav-link {
+    color: var(--dark-text);
 }
 
-.sidebar .navbar .dropdown-item {
-    padding-left: 25px;
-    border-radius: 0 30px 30px 0;
+.content .navbar .nav-link:hover,
+.content .navbar .nav-link.active {
+    color: var(--accent);
 }
 
-.content .navbar .navbar-nav .nav-link {
-    margin-left: 25px;
-    padding: 12px 0;
-    color: var(--dark);
-    outline: none;
+/*** Cards / Widgets ***/
+.bg-light {
+    background-color: #ffffff !important;
+    color: var(--dark-text);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-.content .navbar .navbar-nav .nav-link:hover,
-.content .navbar .navbar-nav .nav-link.active {
-    color: var(--primary);
+/*** Tables ***/
+.table {
+    color: var(--dark-text);
 }
 
-.content .navbar .sidebar-toggler,
-.content .navbar .navbar-nav .nav-link i {
-    width: 40px;
-    height: 40px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: #FFFFFF;
-    border-radius: 40px;
+/*** Status Cards ***/
+#connection-status.connected {
+    color: var(--success);
+    font-weight: bold;
 }
 
-.content .navbar .dropdown-toggle::after {
-    margin-left: 6px;
-    vertical-align: middle;
-    border: none;
-    content: "\f107";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    transition: .5s;
+#connection-status.disconnected {
+    color: var(--muted-text);
+    font-weight: bold;
 }
 
-.content .navbar .dropdown-toggle[aria-expanded=true]::after {
-    transform: rotate(-180deg);
+#alert-status.safe {
+    color: var(--success);
+    font-weight: bold;
 }
 
-@media (max-width: 575.98px) {
-    .content .navbar .navbar-nav .nav-link {
-        margin-left: 15px;
-    }
+#alert-status.drowsy {
+    color: var(--danger);
+    font-weight: bold;
+    animation: blink 1s infinite;
 }
 
+.drowsy {
+    color: var(--danger);
+    font-weight: bold;
+    animation: flash 1s infinite;
+}
+
+@keyframes blink {
+    0%,50%,100% { opacity: 1; }
+    25%,75% { opacity: 0; }
+}
+
+@keyframes flash {
+    0%,50%,100% { text-shadow: 0 0 5px var(--danger), 0 0 10px var(--danger); }
+    25%,75% { text-shadow: 0 0 20px #ff4d4d, 0 0 30px #ff4d4d; }
+}
+
+/*** Buttons ***/
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #0b1623;
+    border-color: #0b1623;
+}
+
+/*** Back to Top Button ***/
+.back-to-top {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+.back-to-top:hover {
+    background-color: var(--accent);
+}
 
 /*** Date Picker ***/
-.bootstrap-datetimepicker-widget.bottom {
-    top: auto !important;
-}
-
-.bootstrap-datetimepicker-widget .table * {
-    border-bottom-width: 0px;
-}
-
-.bootstrap-datetimepicker-widget .table th {
-    font-weight: 500;
-}
-
-.bootstrap-datetimepicker-widget.dropdown-menu {
-    padding: 10px;
-    border-radius: 2px;
-}
-
 .bootstrap-datetimepicker-widget table td.active,
 .bootstrap-datetimepicker-widget table td.active:hover {
     background: var(--primary);
 }
 
 .bootstrap-datetimepicker-widget table td.today::before {
-    border-bottom-color: var(--primary);
+    border-bottom-color: var(--accent);
 }
 
-
-/*** Testimonial ***/
-.progress .progress-bar {
-    width: 0px;
-    transition: 2s;
-}
-
-
-/*** Testimonial ***/
-.testimonial-carousel .owl-dots {
-    margin-top: 24px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-}
-
+/*** Carousel / Testimonials ***/
 .testimonial-carousel .owl-dot {
-    position: relative;
-    display: inline-block;
-    margin: 0 5px;
-    width: 15px;
-    height: 15px;
-    border: 5px solid var(--primary);
-    border-radius: 15px;
-    transition: .5s;
+    border: 3px solid var(--accent);
 }
 
 .testimonial-carousel .owl-dot.active {
-    background: var(--dark);
-    border-color: var(--primary);
+    background: var(--primary);
+}
+
+/*** Responsive tweaks ***/
+@media (max-width: 991.98px) {
+    .sidebar {
+        margin-left: -250px;
+    }
+    .sidebar.open {
+        margin-left: 0;
+    }
+    .content {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .sidebar.open {
+        margin-left: -250px;
+    }
 }
